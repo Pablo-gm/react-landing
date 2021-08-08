@@ -1,0 +1,18 @@
+.features{
+    padding-bottom: 6rem;
+    position: relative;
+    z-index: 1;
+    .card{
+        display: flex;
+    }
+
+    &__icon-container{
+        flex-shrink: 0;
+        margin-right: 1rem;
+        img{
+            padding-top: .5rem;
+            width: 4rem;
+            height: 4rem;
+        }
+    }
+}

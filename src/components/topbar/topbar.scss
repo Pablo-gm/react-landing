@@ -1,0 +1,160 @@
+@import "../../global.scss";
+
+.topbar {
+    $component-root: &;
+
+    width: 100%;
+    height: 4.5rem;
+    background-color: transparent;
+    color: $color-dark;
+    position: fixed;
+    top: 0;
+    overflow: hidden;
+    z-index: 3;
+    transition: all .2s ease;
+  
+    &__wrapper {
+      padding: .75rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    &__logo {
+      height: 3rem;
+      overflow: visible;
+    }
+
+    &__left {
+      display: flex;
+      align-items: center;
+      overflow: visible;
+    }
+
+    &__right {
+      display: flex;
+      overflow: visible;
+      align-items: center;
+    }
+
+    &__links-wrapper{
+      padding: 0;
+      list-style: none;
+      display: flex;
+      @include tablet{
+        width: 100vw;
+        margin-top: 2rem;
+      }
+    }
+
+    &__link{
+      padding: 0 1rem;
+      height: 2.5rem;
+      display: flex;
+      margin-left: .5rem;
+      align-items: center;
+      border-radius: 1.5rem;
+      color: $color-dark;
+      font-weight: 500;
+      transition: all .15s ease-in-out;
+      &:hover{
+        background-color: rgba($color-dark, $opacity-hover);
+      }
+      &--featured{
+        color: $color-primary-text;
+        background-color: $color-primary;
+        &:hover{
+          background-color: rgba($color-primary, (1 - $opacity-button));
+        }
+      }
+
+      @include tablet{
+        &--featured{
+          color: $color-primary;
+          background-color: white;
+          &:hover{
+            background-color: rgba($color-dark, $opacity-hover);
+          }
+        }
+      }
+
+    }
+
+    &__hamburger {
+      width: 2rem;
+      height: 1.5rem;
+      display: none;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-end;
+      cursor: pointer;
+      overflow: visible;
+
+      @include tablet{
+        display: flex;
+      }
+
+      span {
+        width: 100%;
+        height: .25rem;
+        background-color: $color-dark;
+        //transform-origin: left;
+        transition: transform .15s ease, opacity .05s .05s ease-in;
+        &:nth-child(2) {
+          width: 70%;
+        }
+      }
+    }
+
+    &.moving{
+      background-color: white;
+      box-shadow: 0 32px 64px rgba(0,0,0,.02),0 0 24px rgba(0,0,0,.04);
+    }
+
+    
+    &.active {
+      @include tablet{
+        height: auto;
+        background-color: white;
+    
+        #{ $component-root }__right {
+          width: 100%;
+          border-top: 1px solid rgba($color-dark, .1);
+        }
+  
+        #{ $component-root }__links-wrapper{
+          margin-top: .5rem;
+          width: 100%;
+          flex-direction: column;
+        }
+    
+        #{ $component-root }__link{
+          padding: 0;
+          height: 3rem;
+          font-size: 1.25rem;
+          margin-left: 0;
+          border-radius: 0;
+          &:hover{
+            background-color: transparent;
+          }
+        }
+  
+        #{ $component-root }__hamburger {
+          span {
+            &:first-child {
+              transform: translateY(.5rem) rotate(45deg);
+            }
+            &:nth-child(2) {
+              opacity: 0;
+            }
+            &:last-child {
+              transform: translateY(-.75rem) rotate(-45deg);
+            }
+          }
+        }
+      }
+    }
+      
+
+  }

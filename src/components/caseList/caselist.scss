@@ -1,0 +1,15 @@
+@import "../../global.scss";
+
+.caseList {
+  margin-right: 1rem;
+  cursor: pointer;
+
+  &:last-child{
+    margin-right: 0;
+  }
+
+  @include mobile{
+    margin-right: .5rem;
+  }
+
+}

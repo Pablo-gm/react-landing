@@ -1,0 +1,114 @@
+@import "./global.scss";
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+}
+
+.app{
+    background-color: $color-background;
+}
+
+/* layout */
+.container{
+    max-width: $container-width;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin: auto;
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    overflow: visible;
+
+    &--two{
+        grid-template-columns: repeat(2, 1fr);
+        @include tablet{
+            grid-template-columns: repeat(1, 1fr);
+        }  
+    }
+
+    @include mobile{
+      grid-template-columns: repeat(1, 1fr);
+    }   
+    
+ 
+}
+
+/* buttons & links */
+
+.button{
+    border-radius: 10rem;
+    font-size: 1rem;
+    border: transparent;
+    display: inline-block;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1.5rem;
+    font-weight: 500;
+    cursor: pointer;
+
+    &--primary{
+        background-color: $color-primary;
+        color: $color-primary-text;
+        &:hover{
+            background-color: rgba($color-primary, (1 - $opacity-button));
+        }
+    }
+
+    &--light{
+        background-color: #fff;
+        color: $color-primary;
+        &:hover{
+            background-color: rgba(#fff, (1 - $opacity-button));
+        }
+    }
+
+    &--outline{
+        border: 1px solid $color-primary;
+        color: $color-primary;
+        &:hover{
+            background-color: rgba($color-primary, $opacity-button);
+        }
+    }
+
+    &--small{
+        height: 2.5rem;
+        line-height: 2.5rem;
+        padding: 0 1rem;
+    }
+}
+
+/* text */
+h1, .h1{
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+}
+
+.text{
+    &--primary{
+        color: $color-primary;
+    }
+}
+
+/* utility */
+.hide{
+    &--md{
+        @include tablet{
+            display: none;
+        }  
+    }
+}
+
+
+/* reset */
+
+a{
+    text-decoration: none;
+    color: $color-primary;
+}

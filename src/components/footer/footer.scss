@@ -1,0 +1,42 @@
+@import "../../global.scss";
+
+.footer{
+    padding: 2rem 0;
+    background-color: white;
+
+    &__wrapper{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+        @include mobile{
+            flex-direction: column;
+            align-items: baseline;
+        }
+    }
+
+    &__left{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap-reverse;
+        .logo img{
+            height: 2rem;
+        }
+        span{
+            margin-left: 1rem;
+        }
+    }
+
+    &__links-wrapper{
+        padding: 0;
+        list-style: none;
+        display: flex;
+        @include mobile{
+            margin-bottom: .5rem;
+        }
+    }
+
+    .button{
+        display: block;
+    }
+}

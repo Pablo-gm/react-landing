@@ -1,0 +1,53 @@
+@import "../../global.scss";
+
+.contact {
+
+  padding: 4rem 0;
+  
+  *{
+    overflow: visible;
+  }
+
+  &__app-info{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__apps{
+    img{
+      height: 3rem;
+      &:first-child{
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  h3{
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+  }
+
+  form{
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 24px 48px -12px,  rgba(0, 0, 0, 0.24) 0px 0px 8px -4px;
+    input, textarea{
+      width: 100%;
+      padding: .75rem;
+      border: 2px solid rgba($color-dark, .2);
+      border-radius: .5rem;
+      box-sizing: border-box;
+      outline: none;
+      margin-bottom: 1rem;
+
+      &:focus{
+        border-color: $color-dark;
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+$color-dark: #272833;
+$color-primary: #05995e;
+$color-primary-text: #fff;
+$color-background: #fafafa;
+$color-shape: #ffcd55;
+
+$opacity-hover: .05;
+$opacity-button: .1;
+
+
+$container-width: 76rem;
+$mobile-width: 768px;
+
+$tablet-width: 1024px;
+
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}){
+        @content
+    }
+};
+
+@mixin tablet {
+    @media (max-width: #{$tablet-width}){
+        @content
+    }
+};
